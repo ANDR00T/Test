@@ -11,7 +11,7 @@
 <body>
     <?php
    
-    $imagesPath = __DIR__ . './image.png';//Засовываем изображение в переменную
+    $imagesPath = __DIR__ . './image/image.png';//Засовываем изображение в переменную
 
     $old = imageCreateFrompng($imagesPath); //Созданем свое изображение на основе оригинала
     $info   = getimagesize($imagesPath);//получаем по нему информацию 
@@ -26,13 +26,13 @@
     $new = imageCreateTrueColor($w, $h); //Созданм новое изображение 
     imageCopyResampled($new, $old, 0, 0, 0, 0, $w, $h, $width, $height);//копируем основное изображение и переделываем его под наши нужды
  
-    imagepng($new, __DIR__ . './newfile.png');//Сораняем изображение в файл 
-    imagedestroy($new);//избавляемся от
+    imagepng($new, __DIR__ . './image/newfile.png');//Сораняем изображение в файл 
+    imagedestroy($new);//избавляемся от нового изображения
 
   
     ?>
 
-<img src="newfile.png" alt=""><!-- Показываем изображение в браузере -->
+<img src="image/newfile.png" alt=""><!-- Показываем изображение в браузере -->
 
 </body>
 
